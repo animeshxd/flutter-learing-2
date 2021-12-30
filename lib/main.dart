@@ -8,9 +8,15 @@ void main() {
   ));
 }
 
-class Home extends StatelessWidget {
+class Home extends StatefulWidget {
   const Home({Key? key}) : super(key: key);
 
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int status = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,6 +25,15 @@ class Home extends StatelessWidget {
         title: const Text("ID App"),
         backgroundColor: Colors.grey[850],
         elevation: 0,
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.add),
+        backgroundColor: Colors.grey[850],
+        onPressed: () {
+          setState(() {
+            status++;
+          });
+        },
       ),
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30, 40, 30, 0),
@@ -63,9 +78,9 @@ class Home extends StatelessWidget {
                 fontSize: 12,
               ),
             ),
-            const Text(
-              "5",
-              style: TextStyle(
+            Text(
+              "$status",
+              style: const TextStyle(
                 color: Colors.amber,
                 letterSpacing: 1,
                 fontSize: 20,
