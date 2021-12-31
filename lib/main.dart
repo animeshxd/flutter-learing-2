@@ -43,8 +43,7 @@ class _HomeState extends State<Home> {
             Container(),
             const Center(
               child: CircleAvatar(
-                backgroundImage: NetworkImage(
-                    "https://www.w3schools.com/howto/img_avatar.png"),
+                backgroundImage: NetworkImage("https://www.w3schools.com/howto/img_avatar.png"),
                 radius: 30,
               ),
             ),
